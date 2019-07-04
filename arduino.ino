@@ -266,7 +266,8 @@ void stopRobot()
 void loop()
 {
     
-if (Serial.available() > 0) {
+if (Serial.available() > 0) 
+{
   command = Serial.read();
   
 if (lightFront) 
@@ -290,29 +291,52 @@ if (!horn)
 
 switch (command) 
 {
-case 'F':goAhead();break;
-case 'B':goBack();break;
-case 'L':goLeft();break;
-case 'R':goRight();break;
-case 'I':goAheadRight();break;
-case 'G':goAheadLeft();break;
-case 'J':goBackRight();break;
-case 'H':goBackLeft();break;
-case '0':speedCar = 100;break;
-case '1':speedCar = 120;break;
-case '2':speedCar = 135;break;
-case '3':speedCar = 155;break;
-case '4':speedCar = 170;break;
-case '5':speedCar = 185;break;
-case '6':speedCar = 195;break;
-case '7':speedCar = 215;break;
-case '8':speedCar = 235;break;
-case '9':speedCar = 255;break;
-case 'S':stopRobot();break;
-case 'W':lightFront = true;break;
-case 'w':lightFront = false;break;
-case 'V':horn = true;break;
-case 'v':horn = false;break;
+case 'F':goAhead();
+         break;
+case 'B':goBack();
+         break;
+case 'L':goLeft();
+         break;
+case 'R':goRight();
+         break;
+case 'I':goAheadRight();
+         break;
+case 'G':goAheadLeft();
+         break;
+case 'J':goBackRight();
+         break;
+case 'H':goBackLeft();
+         break;
+case '0':speedCar = 100;
+         break;
+case '1':speedCar = 120;
+         break;
+case '2':speedCar = 135;
+         break;
+case '3':speedCar = 155;
+         break;
+case '4':speedCar = 170;
+         break;
+case '5':speedCar = 185;
+         break;
+case '6':speedCar = 195;
+         break;
+case '7':speedCar = 215;
+         break;
+case '8':speedCar = 235;
+         break;
+case '9':speedCar = 255;
+         break;
+case 'S':stopRobot();
+         break;
+case 'W':lightFront = true;
+         break;
+case 'w':lightFront = false;
+         break;
+case 'V':horn = true;
+         break;
+case 'v':horn = false;
+         break;
 
 }
 }
