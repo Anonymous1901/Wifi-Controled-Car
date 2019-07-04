@@ -1,5 +1,7 @@
 #define light_FR  14    //LED Front Right   pin A0 for Arduino Uno
 #define light_FL  15    //LED Front Left    pin A1 for Arduino Uno
+#define light_BR  16    //LED Back  Right   pin A2 for Arduino Uno
+#define light_BL  17    //LED Back  Left    pin A3 for Arduino Uno
 #define horn_Buzz 18    //Horn Buzzer       pin A4 for Arduino Uno
 
 #define ENA_m1 5        // Enable/speed motor Front Right 
@@ -28,6 +30,8 @@ void setup()
    
     pinMode(light_FR, OUTPUT);
     pinMode(light_FL, OUTPUT);
+    pinMode(light_BR, OUTPUT);
+    pinMode(light_BL, OUTPUT);
     pinMode(horn_Buzz, OUTPUT);
     
     pinMode(ENA_m1, OUTPUT);
@@ -92,6 +96,15 @@ void goBack()
       digitalWrite(IN_23, LOW);
       digitalWrite(IN_24, HIGH);
       analogWrite(ENB_m2, speedCar);
+
+
+      digitalWrite(light_BL, HIGH);
+      digitalWrite(light_BR, HIGH);
+
+      delay(20);
+      
+      digitalWrite(light_BL, LOW);
+      digitalWrite(light_BR, LOW);
 
 }
 
@@ -213,6 +226,15 @@ void goBackRight()
       digitalWrite(IN_24, HIGH);
       analogWrite(ENB_m2, speedCar);
 
+
+      digitalWrite(light_BL, HIGH);
+      digitalWrite(light_BR, HIGH);
+
+      delay(20);
+      
+      digitalWrite(light_BL, LOW);
+      digitalWrite(light_BR, LOW);
+
 }
 
 void goBackLeft()
@@ -237,6 +259,15 @@ void goBackLeft()
       digitalWrite(IN_24, HIGH);
       analogWrite(ENB_m2, speedCar/speed_Coeff);
 
+
+      digitalWrite(light_BL, HIGH);
+      digitalWrite(light_BR, HIGH);
+
+      delay(20);
+      
+      digitalWrite(light_BL, LOW);
+      digitalWrite(light_BR, LOW);
+
 }
 
 void stopRobot()
@@ -260,6 +291,10 @@ void stopRobot()
       digitalWrite(IN_23, LOW);
       digitalWrite(IN_24, LOW);
       analogWrite(ENB_m2, speedCar);
+
+
+      digitalWrite(light_BL, HIGH);
+      digitalWrite(light_BR, HIGH);
   
 }
   
